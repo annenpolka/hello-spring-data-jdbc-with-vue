@@ -34,3 +34,5 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
+
+// TODO: docker-composeに関する自動タスクを書く
