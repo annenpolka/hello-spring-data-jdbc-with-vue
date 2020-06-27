@@ -5,4 +5,4 @@ spring:
         url: jdbc://postgresql://localhost:5433/demoapp?currentSchema=app
         username: admin
         password: admin
-        driver-class-name: org.postgresql.Driverr
+        driver-class-name: org.postgresql.Driver
