@@ -4,13 +4,15 @@ services:
         container_name: postgres
         build: .
         ports:
+            # ホストにpostgres環境があるならポート番号をずらしておく
             - 5433:5432
         environment:
             POSTGRES_USER: "admin"
             POSTGRES_PASSWORD: "admin"
             POSTGRES_DB: "demoapp"
         volumes:
+            # volumeに命名している（ホストのディレクトリは参照していない）
             - "db-data:/var/lib/postgresql/data"
-
+# 命名したvolumeをトップレベルで指定するとコンテナ間で共通のvolumeとして扱える（そしてこれをdocker-compose downしても消えない）、docker volume lsで見れる
 volumes:
     db-data:
