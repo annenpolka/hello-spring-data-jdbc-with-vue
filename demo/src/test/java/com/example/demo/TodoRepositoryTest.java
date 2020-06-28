@@ -16,7 +16,7 @@ public class TodoRepositoryTest {
     @Autowired
     private TodoRepository todoRepository;
 
-    // テスト前に毎回全部消し飛ばす
+    // それぞれのテスト前に毎回全部消し飛ばす
     @BeforeEach
     void setup() {
         todoRepository.deleteAll();
@@ -27,7 +27,7 @@ public class TodoRepositoryTest {
         String todoTitle = "todotest";
         boolean finished = false;
 
-        // 新規にinsert
+        // 新規にinsert、todoIdはPostgres側で振るようnullに
         Todo todo = new Todo(null, todoTitle, finished);
         Todo savedTodo = todoRepository.save(todo);
         assertThat(savedTodo.getTodoId()).isNotNull();
