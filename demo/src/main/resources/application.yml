@@ -2,7 +2,7 @@ spring:
     application:
         name: hello-spring-data-jdbc
     datasource:
-        url: jdbc://postgresql://localhost:5433/demoapp?currentSchema=app
+        url: jdbc:postgresql://localhost:5433/demoapp?currentSchema=app
         username: admin
         password: admin
         driver-class-name: org.postgresql.Driver
