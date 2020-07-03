@@ -1,8 +1,21 @@
 spring:
+    profiles:
+        active: app
+---
+spring:
+    profiles: app
     application:
         name: hello-spring-data-jdbc
     datasource:
         url: jdbc:postgresql://localhost:5433/demoapp?currentSchema=app
+        username: admin
+        password: admin
+        driver-class-name: org.postgresql.Driver
+---
+spring:
+    profiles: test
+    datasource:
+        url: jdbc:postgresql://localhost:5433/demoapp?currentSchema=test
         username: admin
         password: admin
         driver-class-name: org.postgresql.Driver
