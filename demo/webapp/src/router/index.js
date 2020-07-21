@@ -24,7 +24,7 @@ const routes = [
     path: '/todos',
     name: 'Todos',
     component: () =>
-      import(/* webpackChunkName: "about" */ '../views/Todos.vue'),
+      import(/* webpackChunkName: "todos" */ '../views/Todos.vue'),
   },
 ];
 
