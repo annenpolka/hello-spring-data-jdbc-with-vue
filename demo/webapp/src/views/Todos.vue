@@ -1,15 +1,42 @@
 <template>
-  <div></div>
+  <el-row>
+    <el-col>
+      <el-card>
+        <el-table :data="todos" style="width: 100%;">
+          <el-table-column
+            prop="todoId"
+            label="id"
+            width="300"
+          ></el-table-column>
+          <el-table-column
+            prop="todoTitle"
+            label="title"
+            width="300"
+          ></el-table-column>
+          <el-table-column
+            prop="createdAt"
+            label="createdAt"
+            width="300"
+          ></el-table-column>
+          <el-table-column prop="finished" label="finished" width="300">
+            <template slot-scope="scope">
+              <span v-if="scope.row.finished">☑</span>
+            </template>
+          </el-table-column>
+        </el-table>
+      </el-card>
+    </el-col>
+  </el-row>
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
 
 export default {
-  name: 'Todo',
+  name: "Todo",
   data() {
     return {
-      todos: [],
+      todos: []
     };
   },
   created: async function() {
@@ -17,11 +44,11 @@ export default {
   },
   methods: {
     refresh: async function() {
-      const res = await axios.get('http://localhost:8080/');
+      const res = await axios.get("http://localhost:8080/");
       this.todos = res.data.todos;
       console.info(this.todos);
-    },
-  },
+    }
+  }
 };
 </script>
 
