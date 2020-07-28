@@ -24,6 +24,7 @@
             width="300"
             v-slot="todo"
           >
+          <!-- v-slotでその列で使ってるオブジェクトの値を取ってこれる -->
             <span v-if="todo.row.finished">☑</span>
           </el-table-column>
         </el-table>
