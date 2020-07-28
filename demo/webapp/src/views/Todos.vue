@@ -18,10 +18,13 @@
             label="createdAt"
             width="300"
           ></el-table-column>
-          <el-table-column prop="finished" label="finished" width="300">
-            <template slot-scope="scope">
-              <span v-if="scope.row.finished">☑</span>
-            </template>
+          <el-table-column
+            prop="finished"
+            label="finished"
+            width="300"
+            v-slot="todo"
+          >
+            <span v-if="todo.row.finished">☑</span>
           </el-table-column>
         </el-table>
       </el-card>
