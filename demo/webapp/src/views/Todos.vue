@@ -17,7 +17,11 @@
     </el-col>
     <el-col>
       <el-card>
-        <el-table :data="todos"  style="width: 100%;">
+        <el-table
+          :data="todos"
+          :default-sort="{ prop: 'todoId', order: 'descending' }"
+          style="width: 100%;"
+        >
           <el-table-column
             prop="todoId"
             label="id"
