@@ -18,4 +18,12 @@ public class Todo {
     private String todoTitle;
     private Boolean finished;
     private final LocalDateTime createdAt;
+
+    public static Todo newTodo(String todoTitle) {
+        Boolean finished = false;
+        LocalDateTime createdAt = LocalDateTime.now();
+        Todo todo = new Todo(null, todoTitle, finished, createdAt);
+        return todo;
+    }
+
 }
