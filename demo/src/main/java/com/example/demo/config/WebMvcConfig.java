@@ -10,7 +10,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
     // CORSのマッピングを追加する、許可するものを指定できる
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**").allowedMethods("GET", "POST");
+        registry.addMapping("/**").allowedMethods("GET", "POST", "DELETE");
     }
 
 }
